@@ -1,0 +1,7 @@
+--build the docker image, from the /frontend folder
+docker build -t sbm-course-frontend:dev .
+
+--run docker locally, and mount the current directory into /app to do hot reloading.
+docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true sbm-course-frontend:dev
+
+docker-compose up -d --build
