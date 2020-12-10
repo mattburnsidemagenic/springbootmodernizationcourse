@@ -52,7 +52,7 @@ export default class MessagesList extends React.Component<Props, State> {
         //     {this.state.messagesList.map((value, index) => <div key={index}>{value.messageText} {value.createdDate.toLocaleDateString()}</div>)}
         // </div>)
         return <div>
-            {this.state.messagesList.map((value, index) => <MessageEntry message={value}></MessageEntry>)}
+            {this.state.messagesList.map((value, index) => <MessageEntry message={value} key={index} index={index}></MessageEntry>)}
             <div>
                 <fieldset><legend>Create a new one</legend>
                 <form onSubmit={this.handleSubmit}>
